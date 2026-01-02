@@ -259,12 +259,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 8. Preloader
     const preloader = document.getElementById('preloader');
-    if (preloader) {
+    const barFill = document.getElementById('preloader-bar-fill');
+    const percentText = document.getElementById('preloader-percent');
+
+    if (preloader && barFill && percentText) {
+        let progress = 0;
+        let isLoaded = false;
+
+        // Start animation immediately
+        const updateProgress = () => {
+            if (!isLoaded) {
+                // Increment slowly until loaded, capped at 90%
+                if (progress < 90) {
+                    progress += (90 - progress) * 0.05; // Ease out approach
+                }
+            } else {
+                // Finish quickly once loaded
+                progress += (100 - progress) * 0.2;
+                if (progress > 99.5) progress = 100;
+            }
+
+            barFill.style.width = `${progress}%`;
+            percentText.textContent = `${Math.floor(progress)}%`;
+
+            if (progress < 100) {
+                requestAnimationFrame(updateProgress);
+            } else {
+                // Done
+                setTimeout(() => {
+                    preloader.classList.add('is-hidden');
+                    setTimeout(() => preloader.remove(), 700);
+                }, 250);
+            }
+        };
+
+        requestAnimationFrame(updateProgress);
+
         window.addEventListener('load', () => {
-            preloader.classList.add('is-hidden');
-            setTimeout(() => {
-                preloader.remove();
-            }, 700);
+            isLoaded = true;
         });
     }
 

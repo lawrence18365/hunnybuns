@@ -179,10 +179,7 @@ section[id] {
     inset: 0;
     display: grid;
     place-items: center;
-    background:
-        radial-gradient(circle at 18% 20%, rgba(231, 208, 173, 0.7), transparent 58%),
-        radial-gradient(circle at 85% 15%, rgba(176, 141, 85, 0.35), transparent 50%),
-        linear-gradient(145deg, var(--color-ivory), var(--color-cream) 55%, var(--color-sand));
+    background: var(--color-parchment);
     z-index: 9990;
     opacity: 1;
     visibility: visible;
@@ -193,26 +190,7 @@ section[id] {
 
 .preloader::before,
 .preloader::after {
-    content: "";
-    position: absolute;
-    width: min(520px, 95vw);
-    height: min(520px, 95vw);
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(231, 217, 176, 0.7), rgba(231, 217, 176, 0) 70%);
-    opacity: 0.55;
-    filter: blur(2px);
-    animation: preloaderFloat 9s ease-in-out infinite;
-}
-
-.preloader::before {
-    top: -18%;
-    right: -12%;
-}
-
-.preloader::after {
-    bottom: -22%;
-    left: -8%;
-    animation-delay: -4s;
+    display: none;
 }
 
 .preloader.is-hidden {
@@ -226,7 +204,7 @@ section[id] {
     position: relative;
     z-index: 1;
     display: grid;
-    gap: 1.25rem;
+    gap: 1.5rem;
     place-items: center;
     text-align: center;
     padding: 0 1.5rem;
@@ -240,90 +218,62 @@ section[id] {
 
 .preloader-mark {
     position: relative;
-    width: min(240px, 65vw);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.95), var(--color-ivory) 55%, var(--color-sand) 100%);
-    box-shadow: 0 28px 60px rgba(12, 26, 18, 0.18), inset 0 0 0 1px rgba(20, 30, 21, 0.08);
-    animation: preloaderGlow 3s ease-in-out infinite;
+    /* Removed the circle container to just show large logo */
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    animation: none;
+    margin-bottom: 1rem;
 }
 
-.preloader-mark::before {
-    content: "";
-    position: absolute;
-    inset: -12px;
-    border-radius: 50%;
-    border: 2px solid rgba(210, 176, 106, 0.35);
-    border-top-color: rgba(15, 138, 74, 0.75);
-    border-right-color: rgba(210, 176, 106, 0.6);
-    animation: preloaderSpin 2.8s linear infinite;
-}
-
+.preloader-mark::before,
 .preloader-mark::after {
-    content: "";
-    position: absolute;
-    inset: 12px;
-    border-radius: 50%;
-    box-shadow: inset 0 0 0 1px rgba(20, 30, 21, 0.08);
+    display: none;
 }
 
 .preloader-logo {
-    width: min(150px, 38vw);
+    width: min(320px, 65vw);
     height: auto;
     display: block;
-    filter: drop-shadow(0 12px 24px rgba(12, 26, 18, 0.16));
+    filter: drop-shadow(0 12px 24px rgba(12, 26, 18, 0.12));
     animation: preloaderPulse 2.6s ease-in-out infinite;
 }
 
-.preloader-copy {
-    display: grid;
-    gap: 0.35rem;
-    place-items: center;
-}
-
-.preloader-eyebrow {
+.preloader-percent {
     font-family: var(--font-serif);
-    font-style: italic;
-    font-size: clamp(1.4rem, 3.5vw, 2rem);
-    color: rgba(23, 32, 24, 0.75);
-}
-
-.preloader-status {
-    font-family: var(--font-sans);
-    font-size: clamp(0.85rem, 2.2vw, 1.05rem);
-    text-transform: uppercase;
-    letter-spacing: 0.28em;
-    color: rgba(20, 30, 21, 0.6);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--color-ink);
+    font-weight: 300;
+    margin-top: 0.5rem;
+    font-variant-numeric: tabular-nums;
 }
 
 .preloader-bar {
-    width: min(260px, 70vw);
+    width: min(280px, 70vw);
     height: 3px;
     border-radius: 999px;
-    background: rgba(20, 30, 21, 0.12);
+    background: rgba(20, 30, 21, 0.1);
     overflow: hidden;
+    position: relative;
 }
 
 .preloader-bar span {
     display: block;
-    width: 45%;
+    width: 0%; /* JS will animate this */
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(15, 138, 74, 0.85), rgba(210, 176, 106, 0.8), transparent);
-    animation: preloaderSweep 1.8s var(--ease-in-out-quart) infinite;
+    background: var(--color-fresh);
+    transition: width 0.1s linear;
 }
 
 @keyframes preloaderPulse {
-
     0%,
     100% {
-        transform: scale(0.97);
-        opacity: 0.88;
+        transform: scale(0.98);
+        opacity: 0.9;
     }
-
     50% {
-        transform: scale(1);
+        transform: scale(1.02);
         opacity: 1;
     }
 }
@@ -1423,7 +1373,7 @@ h4 {
         width: 100%;
         flex-direction: column;
         margin-top: auto;
-        padding-top: 1.25rem;
+        padding-top: 0.5rem;
         order: 3;
     }
 
