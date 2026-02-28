@@ -1084,6 +1084,301 @@ h3,
 }
 
 /* ================================================================
+   V10 EDITORIAL MOBILE HERO
+   ================================================================ */
+@media (max-width: 767px) {
+    .hero-cafe {
+        padding: 5rem 1.5rem 2rem;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        margin-bottom: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: var(--r-full);
+        backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+        font-size: clamp(3.5rem, 14vw, 5rem);
+        line-height: 0.9;
+        letter-spacing: -0.02em;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-title span {
+        font-style: italic;
+    }
+
+    .hero-subhead {
+        font-size: 1.15rem;
+        line-height: 1.4;
+        max-width: 95%;
+        margin-bottom: 3rem;
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        margin-bottom: 3rem;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn-primary {
+        width: 100%;
+        padding: 1.25rem;
+        font-size: 1rem;
+        border-radius: 12px;
+    }
+
+    .hero-actions .btn-text {
+        justify-content: center;
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.85rem;
+    }
+
+    .hero-trust {
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        opacity: 0.8;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding-top: 1.5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+/* ================================================================
+   V10 EDITORIAL "WHY US"
+   ================================================================ */
+.editorial-why {
+    background: var(--beige);
+    color: var(--espresso);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .why-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.why-card {
+    padding: 4rem 2rem;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .why-card {
+        padding: 5rem 3rem;
+        border-bottom: none;
+        border-right: 1px solid rgba(26, 26, 26, 0.1);
+    }
+
+    .why-card:last-child {
+        border-right: none;
+    }
+}
+
+.why-number {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 2rem;
+}
+
+.why-headline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.why-desc {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* ================================================================
+   V10 EDITORIAL "SIGNATURE MENUS"
+   ================================================================ */
+.editorial-menus {
+    background: var(--beige);
+    padding: 6rem 2rem;
+}
+
+@media (min-width: 900px) {
+    .editorial-menus {
+        padding: 8rem 4rem;
+    }
+}
+
+.menus-header {
+    margin-bottom: 4rem;
+    max-width: 800px;
+}
+
+.menus-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--espresso);
+    margin-bottom: 1rem;
+}
+
+.menus-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--espresso);
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-img-wrapper {
+    aspect-ratio: 4 / 5;
+    background: var(--espresso);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.menu-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.menu-card:hover .menu-img {
+    transform: scale(1.06);
+}
+
+.menu-tag {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: var(--beige);
+    color: var(--espresso);
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--r-full);
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.menu-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1.1;
+    color: var(--espresso);
+    margin-bottom: 0.75rem;
+}
+
+.menu-desc {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--espresso);
+    opacity: 0.8;
+    margin-bottom: 2.5rem;
+}
+
+.menu-course {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.course-label {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--pink);
+    margin-bottom: 0.5rem;
+}
+
+.course-dish {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--espresso);
+    font-weight: 600;
+}
+
+/* ================================================================
    V7 FOOTER (Massive Typography)
    ================================================================ */
 .footer-v7 {
