@@ -4,467 +4,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Italian Personal Chef Vancouver | Mangia Bene</title>
-    <meta name="description"
-        content="Italian personal chef in Vancouver. Weekly meal prep, dinner parties, and private events. We shop, cook, and clean so you can just eat.">
-    <link rel="icon" href="./assets/magnia_bene.ico">
+    <title>HunnyBuns | Private Chef Services</title>
+    <meta name="description" content="HunnyBuns — personal chef services in Vancouver. Wholesome goodness is here.">
 
-    <!-- Fonts: Fraunces (Display Serif) & Manrope (UI Sans) -->
+    <!-- Fonts: Fraunces (Chunky Serif) & Outfit (Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Manrope:wght@200..800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Outfit:wght@400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="bg-beige">
     <a href="#main" class="skip-link">Skip to content</a>
-    <div class="preloader" id="preloader" aria-hidden="true">
-        <div class="preloader-inner">
-            <div class="preloader-mark">
-                <img src="./assets/MANGIA_BENE_LOGO.png" alt="" class="preloader-logo">
-            </div>
-            <div class="preloader-bar" aria-hidden="true">
-                <span id="preloader-bar-fill"></span>
-            </div>
-            <div class="preloader-percent" id="preloader-percent">0%</div>
+
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo-header">HUNNYBUNS</a>
+            <nav class="nav">
+                <a href="#process" class="nav-link">Menu</a>
+                <a href="#process" class="nav-link">How It Works</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <a href="#process" class="btn-primary header-cta">VIEW MENU</a>
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+                <span class="menu-icon"><span></span><span></span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu-inner">
+            <nav class="mobile-nav">
+                <a href="#mission" class="mobile-link">Mission</a>
+                <a href="#why-us" class="mobile-link">Why Us</a>
+                <a href="#process" class="mobile-link">Menus</a>
+                <a href="#faq" class="mobile-link">FAQ</a>
+                <a href="#contact" class="mobile-link">Contact</a>
+            </nav>
         </div>
     </div>
-    <div class="grain-overlay"></div>
-
-
-
-    <!-- Navigation -->
-    <header class="header" id="header">
-        <div class="container shell nav-container">
-            <div class="nav-left">
-                <a href="#" class="logo">
-                    <img src="./assets/MANGIA_BENE_LOGO.png" alt="Mangia Bene">
-                </a>
-            </div>
-
-            <div class="nav-center">
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="#process" class="nav-link">How it works</a></li>
-                        <li><a href="#pantry" class="nav-link">House-made sauces</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="nav-right">
-                <a href="#contact" class="btn btn-outline btn-sm nav-cta-desktop">Check availability</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <header id="hero" class="hero">
-        <div class="container shell hero-grid">
-            <div class="hero-content">
-                <h1 class="reveal-text typewriter-mobile">In-home Italian cooking, tailored to your week.</h1>
-                <p class="text-body hero-subline reveal-fade" style="transition-delay: 0.15s;">
-                    Weekly family dinners, new-parent meals, and small dinner parties. I plan, shop, cook, and clean.
-                </p>
-                <div class="hero-cta-row reveal-fade" style="transition-delay: 0.3s;">
-                    <a href="#contact" class="btn hero-cta-flat">Request a quick call</a>
-                </div>
-                <div class="hero-trust-row reveal-fade" style="transition-delay: 0.4s;">
-                    <div class="hero-trust">
-                        <img src="./assets/fork_and_leaves_icon.png" alt="" class="hero-made-logo">
-                        <span>Made in Vancouver</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </header>
 
     <main id="main">
-    <!-- Process -->
-    <section id="process" class="process-section">
+        <section class="hero-cafe">
+            <div class="hero-img-bg">
+                <img src="./assets/654ebce8-544d-4cd8-a0d3-5e0c829c326c.png"
+                    alt="Fresh ingredients prepared for chef-crafted meals" loading="eager" fetchpriority="high">
+                <div class="hero-img-overlay"></div>
+            </div>
 
-        <div class="container">
-            <div class="process-header text-center mx-auto mb-lg">
-                <span class="eyebrow reveal-fade">The Experience</span>
-                <h2 class="process-title reveal-text">From consultation to your table.</h2>
-                <p class="process-subtitle text-body reveal-fade">
-                    A four-step flow for busy weeks: align on preferences, approve a custom menu, and enjoy clean, ready meals.
+            <div class="hero-content">
+                <p class="hero-eyebrow">Vancouver private chef</p>
+                <h1 class="hero-title">
+                    Dinner, handled.<br><span>The Italian way.</span>
+                </h1>
+                <p class="hero-subhead">
+                    We plan, shop, cook in-home, and leave your kitchen spotless.
                 </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Book a consult</a>
+                    <a href="#process" class="btn-text">See sample menu &rarr;</a>
+                </div>
+                <p class="hero-trust">4.9&#9733; &bull; Weekly slots &bull; Cleanup included</p>
             </div>
+        </section>
 
-            <div class="process-grid">
-                <!-- Step 1 -->
-                <article class="process-card reveal-fade">
-                    <div class="process-card-top">
-                        <span class="step-index">01</span>
-                        <h3>Consultation</h3>
-                    </div>
-                    <div class="card-media">
-                        <img src="./assets/mangia-bene-consultation-call-dietary-restrictions-notes-modified.webp" alt="Consultation phase">
-                    </div>
-                    <p class="text-body">We chat briefly to map out your tastes, allergies, and weekly rhythm.</p>
-                </article>
-
-                <!-- Step 2 -->
-                <article class="process-card reveal-fade" style="transition-delay: 0.1s;">
-                    <div class="process-card-top">
-                        <span class="step-index">02</span>
-                        <h3>Menu design</h3>
-                    </div>
-                    <div class="card-media">
-                        <img src="./assets/mangia-bene-italian-menu-proposal-selection-modified.webp" alt="Menu design phase">
-                    </div>
-                    <p class="text-body">I propose a custom menu. You approve it or swap dishes with a click.</p>
-                </article>
-
-                <!-- Step 3 -->
-                <article class="process-card reveal-fade" style="transition-delay: 0.2s;">
-                    <div class="process-card-top">
-                        <span class="step-index">03</span>
-                        <h3>Cooking</h3>
-                    </div>
-                    <div class="card-media">
-                        <img src="./assets/chef-cooking-chicken-piccata-meal-prep-packaging-modified.webp" alt="Cooking phase">
-                    </div>
-                    <p class="text-body">I shop, cook in your kitchen, portion meals, and leave it sparkling clean.</p>
-                </article>
-
-                <!-- Step 4 -->
-                <article class="process-card reveal-fade" style="transition-delay: 0.3s;">
-                    <div class="process-card-top">
-                        <span class="step-index">04</span>
-                        <h3>Feedback</h3>
-                    </div>
-                    <div class="card-media">
-                        <img src="./assets/client-feedback-notes-and-weekly-menu-planning-modified.webp" alt="Feedback phase">
-                    </div>
-                    <p class="text-body">Dinner is ready. Your feedback refines the next week's perfect menu.</p>
-                </article>
+        <!-- Marquee infinite ribbon -->
+        <div class="marquee-section bg-pink text-espresso">
+            <div class="marquee-track">
+                <div class="marquee-content font-sans font-bold">
+                    <span>SMALL-BATCH QUALITY</span>
+                    <span>•</span>
+                    <span>VANCOUVER DELIVERY</span>
+                    <span>•</span>
+                    <span>WEEKLY DROPS</span>
+                    <span>•</span>
+                    <span>SMALL-BATCH QUALITY</span>
+                    <span>•</span>
+                    <span>VANCOUVER DELIVERY</span>
+                    <span>•</span>
+                    <span>WEEKLY DROPS</span>
+                </div>
+                <div class="marquee-content font-sans font-bold" aria-hidden="true">
+                    <span>SMALL-BATCH QUALITY</span>
+                    <span>•</span>
+                    <span>VANCOUVER DELIVERY</span>
+                    <span>•</span>
+                    <span>WEEKLY DROPS</span>
+                    <span>•</span>
+                    <span>SMALL-BATCH QUALITY</span>
+                    <span>•</span>
+                    <span>VANCOUVER DELIVERY</span>
+                    <span>•</span>
+                    <span>WEEKLY DROPS</span>
+                </div>
             </div>
-
         </div>
-    </section>
 
-    <!-- Feature: Little Ones (Advanced Pro) -->
-    <section id="little-ones" class="kids-section">
-        <div class="kids-visual" aria-hidden="true"></div>
-        <div class="container kids-grid">
-            <div class="kids-content">
-                <div class="kids-header reveal-fade">
-                    <span class="eyebrow kids-eyebrow">Family Friendly</span>
-                    <h2 class="kids-title reveal-text">Kid-friendly meals without a second menu.</h2>
-                    <p class="kids-body text-body reveal-fade">Feeding kids is hard. I bridge the gap between "grown-up food" and "kid food" by adjusting the elements that matter.</p>
-                </div>
-
-                <div class="kids-highlight reveal-fade">
-                    <span class="kids-highlight-label">So you only cook (and clean) once.</span>
-                </div>
-
-                <div class="kids-benefits reveal-fade">
-                    <div class="benefit-item">
-                        <span class="benefit-step">01</span>
-                        <div class="benefit-text">
-                            <strong>Smart Portions</strong>
-                            <span>Right-sized for little appetites.</span>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-step">02</span>
-                        <div class="benefit-text">
-                            <strong>Gentle Textures</strong>
-                            <span>Softened veggies & deconstructed options.</span>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-step">03</span>
-                        <div class="benefit-text">
-                            <strong>Mild Seasoning</strong>
-                            <span>Flavorful, but free of spicy surprises.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Pantry / Sauces -->
-    <section id="pantry" class="pantry">
-        <div class="pantry-bg-deco" aria-hidden="true">
-            <img src="./assets/watercolor_swish.svg" alt="">
-        </div>
-        <div class="container shell-wide">
-            <div class="pantry-intro">
-                <div class="pantry-header reveal-fade">
-                    <span class="eyebrow pantry-eyebrow">The Pantry</span>
-                    <h2 class="reveal-text">Small-batch sauces.</h2>
-                    <p class="text-body">
-                        Slow-simmered in small runs, finished with seasonal oils and herbs.
-                    </p>
-                    <div class="pantry-cta-row">
-                        <a href="#contact" class="btn hero-cta-flat">Build a weekly batch</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Horizontal Shelf -->
-            <div class="pantry-shelf-wrapper reveal-fade">
-                <div class="pantry-shelf">
-                    <!-- Sauce 1 -->
-                        <article class="sauce-card is-featured">
-                            <div class="sauce-visual">
-                                <img src="./assets/smooth_sunday_marinara_slow_simmered_tomato_garlic_confit_blend.webp" alt="Jar of Sunday Marinara">
-                            </div>
-                            <div class="sauce-details">
-                                <div class="sauce-info">
-                                <span class="sauce-kicker">Jar of</span>
-                                <h3 class="sauce-title">Sunday Marinara</h3>
-                                <p class="sauce-ingredients">Tomato, basil, garlic confit, EVOO.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Sauce 2 -->
-                        <article class="sauce-card">
-                            <div class="sauce-visual">
-                                <img src="./assets/classic_ragu_bolognese_rich_beef_pork_meat_sauce.webp" alt="Jar of Ragù Bolognese">
-                            </div>
-                            <div class="sauce-details">
-                                <div class="sauce-info">
-                                <span class="sauce-kicker">Jar of</span>
-                                <h3 class="sauce-title">Classic Ragù</h3>
-                                <p class="sauce-ingredients">Beef, pork, soffritto, red wine.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Sauce 3 -->
-                        <article class="sauce-card">
-                            <div class="sauce-visual">
-                                <img src="./assets/fire_roasted_vegetable_sugo_silky_savory_herb_sauce.webp" alt="Jar of Roasted Veg Sugo">
-                            </div>
-                            <div class="sauce-details">
-                                <div class="sauce-info">
-                                <span class="sauce-kicker">Jar of</span>
-                                <h3 class="sauce-title">Roasted Veg Sugo</h3>
-                                <p class="sauce-ingredients">Fire-roasted peppers, zucchini, herbs.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- About Chef -->
-    <section id="about" class="py-lg">
-        <div class="container about-section">
-            <div class="reveal-fade">
-                <div class="chef-frame">
-                    <div class="chef-photo">
-                        <div class="image-frame">
-                            <img src="./assets/chef_v7_1764713213025.png" alt="Chef portrait">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="stagger-group about-copy">
-                <span class="text-caps reveal-fade">Meet the chef</span>
-                <h2 class="reveal-text">Cooking for families and small gatherings.</h2>
-                <blockquote class="about-quote reveal-fade">
-                    <p>Simple Italian meals, cooked in your kitchen.</p>
-                </blockquote>
-                <p class="text-body mt-sm mb-sm reveal-fade">
-                    With a BA in Psychology and a lifelong passion for Italian cooking, I founded Mangia Bene to help families
-                    reconnect over good food—without the stress of preparation.
+        <!-- Mission: Bouncy, thick layout -->
+        <section id="mission" class="section-split bg-espresso text-beige">
+            <div class="split-col content-pad">
+                <h2 class="section-title text-pink anim-up">Family-friendly<br>sophistication.</h2>
+                <p class="text-lg mt-6 anim-up opacity-90 max-w-md">
+                    Getting picky eaters to love their greens doesn’t have to be a battle. Our private menus are crafted
+                    to bridge the gap between grown-up sophistication and approachable kid-friendly meals.
                 </p>
-                <p class="about-signature reveal-fade">— Chef [Name]</p>
+                <div class="mt-8 anim-up">
+                    <a href="#process" class="btn-primary"
+                        style="background: var(--pink); color: var(--espresso);">Explore Services</a>
+                </div>
             </div>
-        </div>
-    </section>
+            <div class="split-col image-pad">
+                <img src="./assets/mission_plating.png" alt="Chef plating" class="br-24 w-full h-full object-cover">
+            </div>
+        </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact-section">
-        <div class="contact-split-layout">
-            <!-- Left: Visual Panel -->
-            <div class="contact-visual">
-                <div class="contact-visual-overlay">
-                    <div class="visual-content reveal-fade">
-                        <h2 class="text-display text-white mb-sm">Let's talk about your week.</h2>
-                        <p class="text-body text-white opacity-90 mb-md">
-                            I handle menu planning, shopping, cooking, and cleanup in your kitchen.
+        <!-- Why Us: Editorial Grid -->
+        <section id="why-us" class="bg-beige text-espresso overflow-hidden border-b border-espresso-light">
+            <div class="grid grid-cols-1 md:grid-cols-3">
+                <!-- Col 1 -->
+                <div class="p-12 md:p-16 border-b md:border-b-0 md:border-r border-espresso-light anim-up">
+                    <p class="font-sans font-bold text-xs uppercase tracking-widest text-pink mb-6">01. Sourcing</p>
+                    <h3 class="font-display font-black text-3xl mb-4 leading-tight">Hyper-Local<br>Ingredients.</h3>
+                    <p class="font-sans opacity-80 leading-relaxed">We bypass the supermarket supply chain. Produce is
+                        sourced directly from Fraser Valley farms, and seafood is day-boat caught from local docks.</p>
+                </div>
+                <!-- Col 2 -->
+                <div class="p-12 md:p-16 border-b md:border-b-0 md:border-r border-espresso-light anim-up"
+                    style="transition-delay: 100ms">
+                    <p class="font-sans font-bold text-xs uppercase tracking-widest text-pink mb-6">02. Design</p>
+                    <h3 class="font-display font-black text-3xl mb-4 leading-tight">Curated<br>Exclusively.</h3>
+                    <p class="font-sans opacity-80 leading-relaxed">No two families eat the same. We map your specific
+                        tastes, allergies, and nutritional goals to build a bespoke menu repertoire from scratch.</p>
+                </div>
+                <!-- Col 3 -->
+                <div class="p-12 md:p-16 anim-up" style="transition-delay: 200ms">
+                    <p class="font-sans font-bold text-xs uppercase tracking-widest text-pink mb-6">03. Service</p>
+                    <h3 class="font-display font-black text-3xl mb-4 leading-tight">Impeccable<br>Discretion.</h3>
+                    <p class="font-sans opacity-80 leading-relaxed">We operate like ghosts in your kitchen.
+                        Professional, quiet, and spotless execution. Your sanctuary remains peaceful, only smelling of
+                        dinner.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="process" class="process-section section-pad text-espresso">
+            <div class="container process-shell">
+                <div class="process-layout">
+                    <div class="process-left">
+                        <p class="process-eyebrow anim-up">How It Works</p>
+                        <h2 class="process-heading anim-up">Three steps to a calmer dinner week.</h2>
+                        <p class="process-intro anim-up">
+                            A private-chef rhythm built for busy Vancouver homes. We handle planning, sourcing, cooking,
+                            and cleanup with zero guesswork.
                         </p>
-                        <div class="visual-features">
-                            <div class="visual-feature-item">
-                                <span class="check-icon">✓</span>
-                                <span>I'll confirm allergies, portions, and kitchen setup.</span>
-                            </div>
-                            <div class="visual-feature-item">
-                                <span class="check-icon">✓</span>
-                                <span>You'll get grocery receipts and a clean kitchen.</span>
-                            </div>
+                        <p class="process-proof anim-up">Vancouver &bull; Weekly slots &bull; Cleanup included</p>
+
+                        <div class="process-cta-stack anim-up">
+                            <a href="#contact" class="btn-primary process-cta-primary">Book a consult</a>
+                            <a href="#process" class="btn-secondary-dark process-cta-secondary">See sample menu</a>
+                        </div>
+                    </div>
+
+                    <div class="process-right">
+                        <ol class="process-list">
+                            <li class="process-item anim-up">
+                                <p class="step-index" aria-hidden="true">01</p>
+                                <div class="step-copy">
+                                    <h3 class="step-title">Consult &amp; Curate</h3>
+                                    <p class="step-desc">10-minute consult, then we design your weekly menu.</p>
+                                </div>
+                            </li>
+
+                            <li class="process-item anim-up" style="transition-delay: 100ms">
+                                <p class="step-index" aria-hidden="true">02</p>
+                                <div class="step-copy">
+                                    <h3 class="step-title">Source &amp; Cook</h3>
+                                    <p class="step-desc">We shop local and cook from scratch in your home.</p>
+                                </div>
+                            </li>
+
+                            <li class="process-item anim-up" style="transition-delay: 200ms">
+                                <p class="step-index" aria-hidden="true">03</p>
+                                <div class="step-copy">
+                                    <h3 class="step-title">Savor &amp; Enjoy</h3>
+                                    <p class="step-desc">Fridge stocked, kitchen spotless, dinners handled.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Elevated Typography Block -->
+        <section
+            class="typo-block bg-pink text-espresso section-pad flex items-center justify-center text-center overflow-hidden">
+            <div class="container" style="max-width: 1200px;">
+                <h2 class="typo-massive font-display font-black leading-none tracking-tighter anim-up"
+                    style="font-size: clamp(4rem, 8vw, 8rem);">
+                    Your kitchen,<br>elevated.
+                </h2>
+                <p class="font-sans text-xl mt-8 max-w-2xl mx-auto anim-up" style="transition-delay: 100ms">
+                    We believe the most luxurious restaurant in the city should be your own dining room.
+                </p>
+            </div>
+        </section>
+
+        <!-- Meet the Chef -->
+        <section id="about" class="section-split bg-beige text-espresso">
+            <div class="split-col image-pad">
+                <img src="./assets/chef_v7_1764713213025.png" alt="Chef portrait"
+                    class="br-24 w-full h-full object-cover">
+            </div>
+            <div class="split-col content-pad">
+                <h2 class="section-title anim-up">Meet<br>the Chef.</h2>
+                <p class="text-lg mt-6 anim-up opacity-90 max-w-md">
+                    With over a decade of experience in fine dining, I've traded the hectic restaurant line for the
+                    intimacy of private kitchens. My goal is bringing the elegance and craft of a Michelin experience to
+                    the comforting reality of your family's dinner table.
+                </p>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="reviews" class="bg-espresso text-beige section-pad overflow-hidden">
+            <div class="container relative z-10 text-center p-8 br-24" style="border: 2px solid var(--pink);">
+                <div class="anim-up">
+                    <p class="text-pink font-sans font-bold tracking-widest uppercase mb-6">Kind Words</p>
+                    <h3 class="testimonial-quote">"HunnyBuns completely transformed our weeknights. The food is
+                        breathtakingly good, and having my kitchen left spotless is the ultimate luxury."</h3>
+                    <p class="font-sans font-bold mt-8">— Sarah J., Vancouver</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section id="faq" class="bg-beige text-espresso section-pad">
+            <div class="container" style="max-width: 800px;">
+                <div class="text-center mb-16">
+                    <p class="text-pink font-sans font-bold tracking-widest uppercase mb-4 anim-up">The Details</p>
+                    <h2 class="section-title anim-up" style="font-size: clamp(3rem, 5vw, 4.5rem);">Frequently Asked.
+                    </h2>
+                </div>
+
+                <div class="faq-list border-t border-espresso-light">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item border-b border-espresso-light anim-up">
+                        <button type="button" id="faq-question-1" aria-expanded="false" aria-controls="faq-answer-1"
+                            class="faq-question w-full text-left py-6 flex justify-between items-center bg-transparent border-none cursor-pointer text-espresso">
+                            <span class="font-display font-medium text-2xl tracking-tight">Do you handle the grocery
+                                shopping?</span>
+                            <span class="faq-icon text-pink text-3xl font-light transition-transform">+</span>
+                        </button>
+                        <div id="faq-answer-1" role="region" aria-labelledby="faq-question-1" aria-hidden="true"
+                            class="faq-answer overflow-hidden transition-all duration-300" style="max-height: 0;">
+                            <p class="font-sans pb-6 opacity-80 text-lg leading-relaxed">Yes. We source all ingredients
+                                from our network of local purveyors, premium butchers, and organic markets. Groceries
+                                are billed separately with no markup.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="faq-item border-b border-espresso-light anim-up" style="transition-delay: 100ms">
+                        <button type="button" id="faq-question-2" aria-expanded="false" aria-controls="faq-answer-2"
+                            class="faq-question w-full text-left py-6 flex justify-between items-center bg-transparent border-none cursor-pointer text-espresso">
+                            <span class="font-display font-medium text-2xl tracking-tight">How does the cleanup
+                                work?</span>
+                            <span class="faq-icon text-pink text-3xl font-light transition-transform">+</span>
+                        </button>
+                        <div id="faq-answer-2" role="region" aria-labelledby="faq-question-2" aria-hidden="true"
+                            class="faq-answer overflow-hidden transition-all duration-300" style="max-height: 0;">
+                            <p class="font-sans pb-6 opacity-80 text-lg leading-relaxed">We leave your kitchen exactly
+                                as we found it (often cleaner). Dishes are loaded or hand-washed, counters sanitized,
+                                and trash removed. You simply walk in to dinner.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="faq-item border-b border-espresso-light anim-up" style="transition-delay: 200ms">
+                        <button type="button" id="faq-question-3" aria-expanded="false" aria-controls="faq-answer-3"
+                            class="faq-question w-full text-left py-6 flex justify-between items-center bg-transparent border-none cursor-pointer text-espresso">
+                            <span class="font-display font-medium text-2xl tracking-tight">Can you accommodate severe
+                                allergies?</span>
+                            <span class="faq-icon text-pink text-3xl font-light transition-transform">+</span>
+                        </button>
+                        <div id="faq-answer-3" role="region" aria-labelledby="faq-question-3" aria-hidden="true"
+                            class="faq-answer overflow-hidden transition-all duration-300" style="max-height: 0;">
+                            <p class="font-sans pb-6 opacity-80 text-lg leading-relaxed">Absolutely. During our initial
+                                consultation, we map out all dietary restrictions, allergies, and preferences to ensure
+                                every meal is entirely safe and customized to your household.</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Right: Form Panel -->
-            <div class="contact-form-panel">
-                <div class="form-header reveal-fade">
-                    <h2 class="mb-xs">Let's plan your first week.</h2>
-                    <p class="text-body text-small">Serving Vancouver and the Lower Mainland.</p>
-                </div>
+        <!-- Contact Section -->
+        <!-- Contact Section (V7 Editorial Brutalist Form) -->
+        <section id="contact" class="section-split bg-espresso text-beige">
+            <!-- Form Half -->
+            <div class="split-col content-pad" style="justify-content: flex-start;">
+                <p class="process-eyebrow anim-up" style="color: var(--pink);">Let's Connect</p>
+                <h2 class="section-title text-beige mb-12 anim-up" style="font-size: clamp(3rem, 6vw, 5rem);">Request a
+                    menu.</h2>
 
-                <form class="contact-form-clean reveal-fade" id="bookingForm">
-                    <div class="form-card">
-                        <div class="form-card-header">
-                            <p class="form-intro">A quick intake so I can tailor your menu and plan a smooth first week.</p>
+                <div class="form-wrapper anim-up" style="transition-delay: 100ms">
+                    <form id="bookingForm" class="contact-form-v7">
+                        <div class="input-group-v7">
+                            <input type="text" id="fullName" class="input-v7" placeholder=" " required>
+                            <label for="fullName" class="label-v7">Your Name</label>
                         </div>
-
-                        <div class="form-grid">
-                            <div class="input-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" class="input-field" required placeholder="Jane Doe" autocomplete="name">
-                            </div>
-                            <div class="input-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" class="input-field" required placeholder="jane@example.com" autocomplete="email">
-                            </div>
-
-                            <fieldset class="input-group span-2">
-                                <legend>Interested In</legend>
-                                <div class="interest-grid">
-                                    <!-- Weekly Family Dinners -->
-                                    <label class="interest-card">
-                                        <input type="radio" name="interest" value="weekly_family" checked>
-                                        <div class="card-content">
-                                            <span class="card-icon">
-                                                <img src="./assets/weekly-family-dinner-italian-serving-bowl-icon.webp" alt="">
-                                            </span>
-                                            <span class="card-text">
-                                                <span class="card-title">Weekly Family Dinners</span>
-                                            </span>
-                                        </div>
-                                    </label>
-
-                                    <!-- New-Parent Meals -->
-                                    <label class="interest-card">
-                                        <input type="radio" name="interest" value="new_parent">
-                                        <div class="card-content">
-                                            <span class="card-icon">
-                                                <img src="./assets/new-parent-meal-italian-lasagna-basket-icon.webp" alt="">
-                                            </span>
-                                            <span class="card-text">
-                                                <span class="card-title">New-Parent Meals</span>
-                                            </span>
-                                        </div>
-                                    </label>
-
-                                    <!-- Dinner Parties -->
-                                    <label class="interest-card">
-                                        <input type="radio" name="interest" value="dinner_party">
-                                        <div class="card-content">
-                                            <span class="card-icon">
-                                                <img src="./assets/watercolor-dinner-party-table-toast-icon.webp" alt="">
-                                            </span>
-                                            <span class="card-text">
-                                                <span class="card-title">Dinner Parties</span>
-                                            </span>
-                                        </div>
-                                    </label>
-
-                                    <!-- House-made sauces -->
-                                    <label class="interest-card">
-                                        <input type="radio" name="interest" value="sauces_addon">
-                                        <div class="card-content">
-                                            <span class="card-icon">
-                                                <img src="./assets/house-made-italian-sauce-jars-watercolor-icon.webp" alt="">
-                                            </span>
-                                            <span class="card-text">
-                                                <span class="card-title">House-made sauces</span>
-                                            </span>
-                                        </div>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <div class="input-group span-2">
-                                <label for="message">Message <span class="label-note">Optional</span></label>
-                                <textarea id="message" name="message" rows="3" class="input-field" aria-describedby="message-hint"
-                                    placeholder="Tell me about allergies, preferences, or event details..."></textarea>
-                                <p class="field-hint" id="message-hint">Dietary details help me build the right menu.</p>
-                            </div>
+                        <div class="input-group-v7" style="margin-top: 2rem">
+                            <input type="email" id="email" class="input-v7" placeholder=" " required>
+                            <label for="email" class="label-v7">Email Address</label>
                         </div>
-
-                        <div class="form-action">
-                            <button type="submit" class="btn hero-cta-flat full-width">
-                                <span>Request a quick call</span>
-                                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        <div class="input-group-v7" style="margin-top: 2rem">
+                            <select id="interest" class="input-v7" required>
+                                <option value="" disabled selected></option>
+                                <option value="Weekly Dinners">Weekly Family Dinners</option>
+                                <option value="Private Event">Private Event</option>
+                            </select>
+                            <label for="interest" class="label-v7">I'm interested in...</label>
+                        </div>
+                        <div class="mt-8 pt-8">
+                            <button type="submit" class="btn-submit-v7 w-full text-center">
+                                SEND REQUEST &rarr;
                             </button>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
+
+            <!-- Image Half -->
+            <div class="split-col relative overflow-hidden hidden md:block" style="padding: 0;">
+                <img src="./assets/chef_v7_1764713213025.png" alt="Chef smiling" class="w-full h-full object-cover"
+                    style="opacity: 0.9; filter: contrast(1.1) grayscale(0.1);">
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid stagger-group">
-            <div class="footer-brand reveal-fade">
-                <img src="./assets/MANGIA_BENE_LOGO.png" class="footer-logo" alt="Mangia Bene">
-                <p class="footer-description">In-home Italian cooking for families, new parents, and small dinner parties.</p>
-                <div class="footer-meta">
-                    <span>Hunny Buns Inc.</span>
-                    <span class="footer-divider" aria-hidden="true">•</span>
-                    <span>Vancouver, BC</span>
-                </div>
+    <!-- Footer (V7 Massive Typography) -->
+    <footer class="footer-v7 bg-espresso text-beige overflow-hidden relative">
+        <div class="footer-top flex justify-between px-8 py-12 border-b border-light">
+            <div class="footer-brand">
+                <p class="text-pink font-sans font-bold tracking-widest uppercase text-sm mb-2">Vancouver, BC</p>
+                <p class="opacity-70 text-sm max-w-sm">Private chef services bridging the gap between grown-up
+                    sophistication and approachable kid-friendly meals.</p>
             </div>
-            <div class="footer-nav reveal-fade">
-                <div class="footer-links">
-                    <span class="footer-label">Explore</span>
-                    <ul class="footer-list">
-                        <li><a href="#process">How it works</a></li>
-                        <li><a href="#pantry">House-made sauces</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Check availability</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <span class="footer-label">Contact</span>
-                    <ul class="footer-list">
-                        <li><a href="mailto:hello@mangiabene.com">hello@mangiabene.com</a></li>
-                        <li><a href="tel:+16045550123">+1 (604) 555-0123</a></li>
-                        <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
-                    </ul>
-                </div>
+            <div class="footer-links flex gap-8 text-sm font-bold uppercase tracking-widest">
+                <a href="#mission" class="hover-text-pink transition">Mission</a>
+                <a href="#process" class="hover-text-pink transition">Menu</a>
+                <a href="#contact" class="hover-text-pink transition">Contact</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container footer-bottom-row">
-                <span>&copy; 2025 Hunny Buns Inc.</span>
-                <span>Private & insured &bull; <a href="privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a> &bull; <a href="terms.html" style="color: inherit; text-decoration: none;">Terms & Conditions</a></span>
-            </div>
+        <!-- Massive bottom text -->
+        <h2 class="footer-massive-text">HUNNYBUNS</h2>
+        <div class="px-8 pb-8 text-center opacity-50 text-xs tracking-widest uppercase">
+            &copy; 2026 HunnyBuns Inc. All rights reserved.
         </div>
     </footer>
 
-    <!-- Toast -->
-    <div class="toast" id="toast">
-        Thank you. We will be in touch shortly.
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <span class="toast-tx font-sans font-bold text-espresso">Request received. We will be in touch shortly!</span>
     </div>
 
-    <!-- Scripts -->
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta" aria-hidden="true">
+        <a href="#contact" class="btn-primary">Book a consult</a>
+        <a href="#process" class="btn-text-light">Menu</a>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

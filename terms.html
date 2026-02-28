@@ -1,157 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions | Mangia Bene</title>
-    <meta name="description" content="Terms and Conditions for Mangia Bene services.">
+    <title>Terms & Conditions | HunnyBuns</title>
+    <meta name="description" content="Terms and Conditions for HunnyBuns services.">
     <link rel="icon" href="./assets/magnia_bene.ico">
-
-    <!-- Fonts: Fraunces (Display Serif) & Manrope (UI Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Manrope:wght@200..800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;500;600;700;800;900;1,6..96,400;500;600&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Specific overrides for text-heavy pages */
-        .legal-page {
-            padding-top: calc(var(--header-height) + 4rem);
-            padding-bottom: var(--section-space);
-            background-color: var(--color-parchment);
-        }
-
-        .legal-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .legal-content h1 {
-            margin-bottom: var(--space-md);
-        }
-
-        .legal-content h2 {
-            margin-top: var(--space-lg);
-            margin-bottom: var(--space-sm);
-            font-size: var(--text-xl);
-        }
-
-        .legal-content p, .legal-content ul {
-            margin-bottom: var(--space-sm);
-            color: var(--color-muted);
-        }
-        
-        .legal-content ul {
-            padding-left: 1.5rem;
-        }
-        
-        .legal-content li {
-            margin-bottom: 0.5rem;
-        }
-    </style>
 </head>
-
 <body>
-    <!-- Navigation -->
-    <header class="header" id="header">
-        <div class="container shell nav-container">
-            <div class="nav-left">
-                <a href="index.html" class="logo">
-                    <img src="./assets/MANGIA_BENE_LOGO.png" alt="Mangia Bene">
-                </a>
-            </div>
-
-            <div class="nav-center">
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html#process" class="nav-link">How it works</a></li>
-                        <li><a href="index.html#pantry" class="nav-link">House-made sauces</a></li>
-                        <li><a href="index.html#about" class="nav-link">About</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="nav-right">
-                <a href="index.html#contact" class="btn btn-outline btn-sm nav-cta-desktop">Check availability</a>
-            </div>
+    <header class="header is-scrolled" id="header">
+        <div class="header-inner container">
+            <a href="index.html" class="logo">HunnyBuns</a>
+            <nav class="nav">
+                <a href="index.html#process" class="nav-link">How it works</a>
+                <a href="index.html#pantry" class="nav-link">Sauces</a>
+                <a href="index.html#about" class="nav-link">About</a>
+            </nav>
+            <a href="index.html#contact" class="btn btn-cta nav-desktop">Book a call</a>
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+                <span class="menu-icon"><span></span><span></span></span>
+            </button>
         </div>
     </header>
-
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu-inner">
+            <nav class="mobile-nav">
+                <a href="index.html#process" class="mobile-link">How it works</a>
+                <a href="index.html#pantry" class="mobile-link">Sauces</a>
+                <a href="index.html#about" class="mobile-link">About</a>
+                <a href="index.html#contact" class="mobile-link">Contact</a>
+            </nav>
+        </div>
+    </div>
     <main class="legal-page">
         <div class="container legal-content">
             <h1>Terms & Conditions</h1>
-            <p class="text-body">Last updated: January 2, 2026</p>
-
+            <p>Last updated: January 2, 2026</p>
             <h2>1. Introduction</h2>
-            <p class="text-body">Welcome to Mangia Bene. These Terms and Conditions govern your use of our website and services. By accessing or using our services, you agree to be bound by these terms.</p>
-
+            <p>Welcome to HunnyBuns. These Terms and Conditions govern your use of our website and services. By accessing or using our services, you agree to be bound by these terms.</p>
             <h2>2. Services</h2>
-            <p class="text-body">Mangia Bene provides in-home personal chef services, including meal planning, grocery shopping, cooking, and cleanup. We also offer small-batch sauces and catering for small events.</p>
-
+            <p>HunnyBuns provides in-home personal chef services, including meal planning, grocery shopping, cooking, and cleanup. We also offer small-batch sauces and catering for small events.</p>
             <h2>3. Booking and Cancellations</h2>
-            <p class="text-body">Bookings are subject to availability. We require a minimum notice of 48 hours for cancellations. Cancellations made within 48 hours of the scheduled service may be subject to a cancellation fee.</p>
-
+            <p>Bookings are subject to availability. We require a minimum notice of 48 hours for cancellations. Cancellations made within 48 hours of the scheduled service may be subject to a cancellation fee.</p>
             <h2>4. Dietary Restrictions and Allergies</h2>
-            <p class="text-body">It is the client's responsibility to inform us of any allergies or dietary restrictions prior to the service. While we take every precaution to prevent cross-contamination, we cannot guarantee a completely allergen-free environment as we cook in your home kitchen.</p>
-
+            <p>It is the client's responsibility to inform us of any allergies or dietary restrictions prior to the service. While we take every precaution to prevent cross-contamination, we cannot guarantee a completely allergen-free environment as we cook in your home kitchen.</p>
             <h2>5. Payment</h2>
-            <p class="text-body">Payment terms will be agreed upon booking. Invoices are due upon receipt unless otherwise specified.</p>
-
+            <p>Payment terms will be agreed upon booking. Invoices are due upon receipt unless otherwise specified.</p>
             <h2>6. Liability</h2>
-            <p class="text-body">Mangia Bene is insured. However, we are not liable for any damages to your property or personal injury that may occur during the provision of our services, except in cases of gross negligence or willful misconduct.</p>
-
+            <p>HunnyBuns is insured. However, we are not liable for any damages to your property or personal injury that may occur during the provision of our services, except in cases of gross negligence or willful misconduct.</p>
             <h2>7. Changes to Terms</h2>
-            <p class="text-body">We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to the website.</p>
-
+            <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to the website.</p>
             <h2>8. Contact Us</h2>
-            <p class="text-body">If you have any questions about these Terms, please contact us at <a href="mailto:hello@mangiabene.com">hello@mangiabene.com</a>.</p>
+            <p>If you have any questions about these Terms, please contact us at <a href="mailto:hello@hunnybuns.ca">hello@hunnybuns.ca</a>.</p>
         </div>
     </main>
-
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-grid stagger-group">
-            <div class="footer-brand reveal-fade">
-                <img src="./assets/MANGIA_BENE_LOGO.png" class="footer-logo" alt="Mangia Bene">
-                <p class="footer-description">In-home Italian cooking for families, new parents, and small dinner parties.</p>
-                <div class="footer-meta">
-                    <span>Hunny Buns Inc.</span>
-                    <span class="footer-divider" aria-hidden="true">•</span>
-                    <span>Vancouver, BC</span>
-                </div>
+        <div class="container">
+            <div class="ft-rule"></div>
+            <div class="ft-grid">
+                <div class="ft-brand"><span class="ft-logo">HunnyBuns</span><p>Home-cooked meals for families, new parents, and small dinner parties.</p></div>
+                <div class="ft-links"><a href="index.html#process">How it works</a><a href="index.html#pantry">Sauces</a><a href="index.html#about">About</a><a href="index.html#contact">Book a call</a></div>
+                <div class="ft-contact"><a href="mailto:hello@hunnybuns.ca">hello@hunnybuns.ca</a><a href="tel:+16045550123">+1 (604) 555-0123</a><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></div>
             </div>
-            <div class="footer-nav reveal-fade">
-                <div class="footer-links">
-                    <span class="footer-label">Explore</span>
-                    <ul class="footer-list">
-                        <li><a href="index.html#process">How it works</a></li>
-                        <li><a href="index.html#pantry">House-made sauces</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#contact">Check availability</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <span class="footer-label">Contact</span>
-                    <ul class="footer-list">
-                        <li><a href="mailto:hello@mangiabene.com">hello@mangiabene.com</a></li>
-                        <li><a href="tel:+16045550123">+1 (604) 555-0123</a></li>
-                        <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container footer-bottom-row">
-                <span>&copy; 2025 Hunny Buns Inc.</span>
-                <span>Private & insured &bull; <a href="privacy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a> &bull; <a href="terms.html" style="color: inherit; text-decoration: none;">Terms & Conditions</a></span>
-            </div>
+            <div class="ft-rule"></div>
+            <div class="ft-bottom"><span>&copy; 2026 HunnyBuns Inc. · Vancouver, BC</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span></div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
