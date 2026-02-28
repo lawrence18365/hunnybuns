@@ -53,52 +53,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* ================================================================
-   LOADING SCREEN
-   ================================================================ */
-.screen-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: var(--pink);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.8s var(--ease-out), visibility 0.8s var(--ease-out);
-}
-
-.screen-loader.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.loader-brand {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    color: var(--espresso);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    animation: pulse 1.5s infinite var(--ease-out);
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.5;
-        transform: scale(0.95);
-    }
-}
 
 /* Utils */
 .bg-beige {
@@ -207,7 +161,8 @@ body {
 /* Accessibility */
 .skip-link {
     position: absolute;
-    top: -50px;
+    top: -120px;
+    /* Hide completely out of viewport to avoid top strip glitch */
     left: 0;
     background: var(--pink);
     color: var(--espresso);
@@ -265,8 +220,8 @@ h3,
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 18px clamp(16px, 4vw, 32px);
-    transition: transform 0.35s var(--ease-out), padding 0.3s var(--ease-out);
+    padding: 0;
+    transition: transform 0.35s var(--ease-out), background-color 0.3s var(--ease-out), backdrop-filter 0.3s var(--ease-out);
 }
 
 .header-inner {
@@ -276,22 +231,21 @@ h3,
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    padding: 12px 18px;
-    border-radius: var(--r-full);
-    background: rgba(12, 12, 12, 0.56);
-    border: 1px solid rgba(245, 242, 235, 0.28);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
+    padding: 0 clamp(16px, 4vw, 32px);
+    height: 64px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
 }
 
 .header.is-scrolled {
-    padding-top: 12px;
+    background-color: rgba(12, 12, 12, 0.25);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.header.is-scrolled .header-inner {
-    background: rgba(12, 12, 12, 0.84);
-    border-color: rgba(245, 242, 235, 0.35);
-}
+
 
 .header.is-hidden {
     transform: translateY(calc(-100% - 24px));
@@ -352,6 +306,9 @@ h3,
     justify-content: center;
     width: 44px;
     height: 44px;
+    padding: 10px;
+    /* Expand hit area internally */
+    cursor: pointer;
 }
 
 @media (min-width: 900px) {
@@ -430,44 +387,53 @@ h3,
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background: var(--espresso);
-    color: var(--beige);
-    padding: 16px 32px;
-    border-radius: var(--r-full);
+    background: var(--beige);
+    color: var(--espresso);
+    padding: 0 40px;
+    border-radius: 0;
+    /* Pure architectural block constraint */
     font-weight: 700;
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    border: 2px solid var(--espresso);
-    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
-    /* Subdues the extreme bubble vibe */
-    min-height: 52px;
-    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    border: none;
+    box-shadow: none;
+    height: 48px;
+    /* Slightly shorter, more confident */
+    transition: transform 0.2s, background 0.2s, opacity 0.2s;
 }
 
 .btn-primary:hover {
+    background: #ffffff;
     transform: translateY(-2px);
-    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.btn-text {
+.btn-link {
     display: inline-flex;
     align-items: center;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.05em;
+    font-weight: 500;
+    /* Whisper down from 600 */
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
     color: var(--beige);
-    text-transform: uppercase;
-    padding: 12px 16px;
+    padding: 0;
+    height: auto;
+    /* It's a real link now */
     background: transparent;
     border: none;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, text-decoration-color 0.2s;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: transparent;
+    /* Whisper default state */
+    align-self: flex-start;
+    /* Explicit left alignment */
 }
 
-.btn-text:hover {
-    opacity: 0.7;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+.btn-link:hover {
+    opacity: 0.9;
+    text-decoration-color: var(--beige);
 }
 
 .btn-secondary {
@@ -513,23 +479,16 @@ h3,
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: 75% center;
+    /* Shift the main subject slightly right to give text room on the left */
 }
 
 .hero-img-overlay {
     position: absolute;
     inset: 0;
     z-index: 2;
-    background:
-        linear-gradient(90deg,
-            rgba(7, 7, 7, 0.72) 0%,
-            rgba(7, 7, 7, 0.5) 35%,
-            rgba(7, 7, 7, 0.22) 62%,
-            rgba(7, 7, 7, 0.04) 100%),
-        linear-gradient(180deg,
-            rgba(6, 6, 6, 0.48) 0%,
-            rgba(6, 6, 6, 0.22) 30%,
-            rgba(6, 6, 6, 0.46) 100%);
+    /* Lighten gradient: let marble show, keep bottom just dark enough */
+    background: linear-gradient(180deg, rgba(8, 8, 8, 0) 0%, rgba(8, 8, 8, 0.3) 40%, rgba(8, 8, 8, 0.85) 100%);
 }
 
 .hero-content {
@@ -539,69 +498,76 @@ h3,
     padding: clamp(126px, 18vh, 190px) clamp(24px, 6vw, 84px) clamp(56px, 12vh, 98px);
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .hero-eyebrow {
-    font-size: 0.76rem;
-    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     font-weight: 700;
-    color: rgba(245, 242, 235, 0.86);
+    color: var(--beige);
+    margin-bottom: 8px;
+    /* TIGHT */
 }
 
 .hero-title {
     max-width: 16ch;
     color: var(--beige);
     font-size: clamp(2.9rem, 6.8vw, 6.2rem);
-    line-height: 0.92;
+    line-height: 1.05;
+    /* Add a hair more breathing room */
     text-wrap: balance;
     text-shadow: none;
+    margin-bottom: 24px;
+    /* MEDIUM */
 }
 
-.hero-title span {
-    color: var(--pink);
+.hero-highlight {
+    font-style: italic;
+    font-family: var(--font-display);
+    font-weight: 400;
+    /* Contrast */
 }
 
 .hero-subhead {
     max-width: 44ch;
     font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-    line-height: 1.5;
-    color: rgba(245, 242, 235, 0.92);
+    line-height: 1.45;
+    color: rgba(245, 242, 235, 0.9);
+    margin-bottom: 40px;
+    /* MEDIUM/LARGE */
 }
 
 .hero-actions {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.hero-actions .btn-primary {
-    background: var(--pink);
-    color: var(--espresso);
-    border-color: var(--pink);
-}
-
-.hero-actions .btn-primary:hover {
-    background: #ffc7db;
+    flex-direction: column;
+    align-items: flex-start;
+    /* LEFT ALIGNED */
+    gap: 8px;
+    /* EXTRA SMALL gap to tuck link extremely tight to CTA */
+    margin-bottom: 16px;
+    /* TIGHT gap to stamp */
+    width: 100%;
 }
 
 .hero-trust {
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    font-size: 0.78rem;
+    /* Slightly larger */
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--beige);
+    /* High contrast */
     text-transform: uppercase;
-    color: rgba(245, 242, 235, 0.82);
+    opacity: 0.9;
+    align-self: flex-start;
 }
 
 @media (max-width: 899px) {
-    .header {
-        padding: 14px 16px;
-    }
-
     .header-inner {
-        padding: 10px 14px;
+        padding: 0 20px;
+        height: 60px;
     }
 
     .header-cta {
@@ -610,19 +576,18 @@ h3,
 }
 
 @media (max-width: 768px) {
-    .header {
-        padding: 12px 16px;
-        border: none;
+    .header-inner {
+        padding: 0 16px;
+        height: 56px;
     }
 
-    .header-inner {
-        padding: 8px 16px;
-        border-width: 1px;
+    .hero-img-bg img {
+        object-position: left center;
+        /* Push food to the right so text sits on marble negative space */
     }
 
     .hero-content {
-        padding: 112px 24px 52px;
-        gap: 14px;
+        padding: 120px 24px 50px;
         align-items: flex-start;
         text-align: left;
     }
@@ -634,59 +599,30 @@ h3,
 
     .hero-subhead {
         font-size: 1.05rem;
+        margin-bottom: 36px;
     }
 
     .hero-actions {
         width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+        gap: 12px;
+        /* Tuck link to button */
+        margin-bottom: 16px;
+        /* Tighter against the stamp */
     }
 
     .hero-actions .btn-primary {
         width: auto;
+        /* STOP span full on mobile gracefully - true left column */
+        min-width: 200px;
     }
 
     .hero-trust {
-        font-size: 0.77rem;
-        letter-spacing: 0.04em;
-    }
-
-    .mobile-sticky-cta {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 12px 24px;
-        background: rgba(26, 26, 26, 0.96);
-        backdrop-filter: blur(12px);
-        border-top: 1px solid rgba(245, 242, 235, 0.1);
-        z-index: 1000;
-        gap: 20px;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .mobile-sticky-cta .btn-primary {
-        flex: 1;
-        padding: 12px;
-        min-height: 48px;
-        font-size: 0.85rem;
-    }
-
-    .mobile-sticky-cta .btn-text-light {
-        color: var(--beige);
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        letter-spacing: 0.05em;
-        text-decoration: none;
-    }
-
-    /* Ensure bottom spacing so sticky CTA doesn't overlap footer content permanently */
-    body {
-        padding-bottom: 72px;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-align: left;
+        /* Stamp feel */
+        color: #ffffff;
+        /* Contrast bump */
     }
 }
 
@@ -1140,79 +1076,6 @@ h3,
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-
-    .hero-eyebrow {
-        font-size: 0.75rem;
-        letter-spacing: 0.15em;
-        margin-bottom: 1.5rem;
-        background: rgba(255, 255, 255, 0.1);
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        border-radius: var(--r-full);
-        backdrop-filter: blur(10px);
-    }
-
-    .hero-title {
-        font-size: clamp(2.5rem, 10.5vw, 4rem);
-        line-height: 0.95;
-        letter-spacing: -0.02em;
-        margin-bottom: 1rem;
-        max-width: none;
-        text-wrap: wrap;
-    }
-
-    .hero-title span {
-        font-style: italic;
-        white-space: nowrap;
-    }
-
-    .hero-subhead {
-        font-size: 1.05rem;
-        line-height: 1.35;
-        max-width: 95%;
-        margin-bottom: 2rem;
-    }
-
-    .hero-actions {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        width: 100%;
-        margin-bottom: 2rem;
-        align-items: stretch;
-    }
-
-    .hero-actions .btn-primary {
-        width: 100%;
-        padding: 1.25rem;
-        font-size: 1rem;
-        border-radius: 12px;
-    }
-
-    .hero-actions .btn-text {
-        justify-content: center;
-        width: 100%;
-        padding: 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 0.85rem;
-    }
-
-    .hero-trust {
-        font-size: 0.7rem;
-        letter-spacing: 0.15em;
-        opacity: 0.8;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        padding-top: 1.5rem;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
     }
 }
 

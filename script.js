@@ -146,15 +146,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* ================================================================
-   PAGE LOAD: HIDE LOADER
-   ================================================================ */
-window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    if (loader) {
-        // Slight delay to ensure a smooth transition and show off the branding
-        setTimeout(() => {
-            loader.classList.add('is-hidden');
-        }, 500);
-    }
-});
