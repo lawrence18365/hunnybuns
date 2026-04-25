@@ -1463,6 +1463,59 @@ h3,
     border-top: 1px solid rgba(245, 242, 235, 0.1);
 }
 
+/* ================================================================
+   EDITORIAL IMAGE GALLERY
+   ================================================================ */
+.gallery-section {
+    background: var(--espresso);
+    color: var(--beige);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-item:nth-child(2) {
+        transform: translateY(3rem);
+    }
+
+    .gallery-grid {
+        padding-bottom: 3rem;
+    }
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--r-24);
+    overflow: hidden;
+    background: var(--beige);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+}
+
 .border-r {
     border-right: 1px solid rgba(245, 242, 235, 0.1);
 }

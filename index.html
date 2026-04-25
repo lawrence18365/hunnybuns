@@ -4,8 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HunnyBuns | Private Chef Services</title>
-    <meta name="description" content="HunnyBuns — personal chef services in Vancouver. Wholesome goodness is here.">
+    <title>HunnyBuns | Personal Cook Services in the Lower Mainland</title>
+    <meta name="description" content="HunnyBuns — personal cook services across the Lower Mainland. Family-friendly, home-cooked meals, planned, shopped, and prepared in your home or ours.">
+    <link rel="canonical" href="https://lawrence18365.github.io/hunnybuns/">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HunnyBuns | Personal Cook Services in the Lower Mainland">
+    <meta property="og:description" content="Family-friendly, home-cooked meals planned, shopped, and prepared in your home or ours. Serving the Lower Mainland.">
+    <meta property="og:image" content="https://lawrence18365.github.io/hunnybuns/assets/family-dinner-home-cooked-pasta-vancouver.webp">
+    <meta property="og:url" content="https://lawrence18365.github.io/hunnybuns/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#3b2a20">
 
     <!-- Fonts: Fraunces (Chunky Serif) & Outfit (Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,12 +34,13 @@
         <div class="header-inner">
             <a href="#" class="logo-header">HUNNYBUNS</a>
             <nav class="nav">
-                <a href="#process" class="nav-link">Menu</a>
                 <a href="#process" class="nav-link">How It Works</a>
+                <a href="#about" class="nav-link">Meet Your Cook</a>
                 <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#faq" class="nav-link">FAQ</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <a href="#process" class="btn-primary header-cta">VIEW MENU</a>
+            <a href="#contact" class="btn-primary header-cta">BOOK A CONSULT</a>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
                 <span class="menu-icon"><span></span><span></span></span>
             </button>
@@ -40,9 +51,9 @@
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
         <div class="mobile-menu-inner">
             <nav class="mobile-nav">
-                <a href="#mission" class="mobile-link">Mission</a>
-                <a href="#why-us" class="mobile-link">Why Us</a>
-                <a href="#process" class="mobile-link">Menus</a>
+                <a href="#process" class="mobile-link">How It Works</a>
+                <a href="#about" class="mobile-link">Meet Your Cook</a>
+                <a href="#reviews" class="mobile-link">Reviews</a>
                 <a href="#faq" class="mobile-link">FAQ</a>
                 <a href="#contact" class="mobile-link">Contact</a>
             </nav>
@@ -52,22 +63,22 @@
     <main id="main">
         <section class="hero-cafe">
             <div class="hero-img-bg">
-                <img src="./assets/654ebce8-544d-4cd8-a0d3-5e0c829c326c.png"
-                    alt="Fresh ingredients prepared for chef-crafted meals" loading="eager" fetchpriority="high">
+                <img src="./assets/chef-portrait-cooking.webp" alt="Fresh ingredients prepared for home-cooked meals"
+                    loading="eager" fetchpriority="high">
                 <div class="hero-img-overlay"></div>
             </div>
 
             <div class="hero-content">
-                <p class="hero-eyebrow">VANCOUVER PRIVATE CHEF</p>
+                <p class="hero-eyebrow">LOWER MAINLAND PERSONAL COOK</p>
                 <h1 class="hero-title">
-                    Dinner, handled.<br>The <i class="hero-highlight">Italian</i> way.
+                    Your meals & snacks,<br>handled with <i class="hero-highlight">care</i>.
                 </h1>
                 <p class="hero-subhead">
-                    We plan, shop, cook in-home. You come home to spotless.
+                    We plan, shop, and cook — in your home or mine. You come home to spotless.
                 </p>
                 <div class="hero-actions">
                     <a href="#contact" class="btn-primary">Book a consult</a>
-                    <a href="#process" class="btn-link">See sample menu &rarr;</a>
+                    <a href="#process" class="btn-link">See how it works &rarr;</a>
                 </div>
                 <p class="hero-trust">4.9&#9733; &nbsp;&bull;&nbsp; WEEKLY SLOTS &nbsp;&bull;&nbsp; CLEANUP INCLUDED</p>
             </div>
@@ -79,26 +90,26 @@
                 <div class="marquee-content font-sans font-bold">
                     <span>SMALL-BATCH QUALITY</span>
                     <span>•</span>
-                    <span>VANCOUVER DELIVERY</span>
+                    <span>LOWER MAINLAND DELIVERY</span>
                     <span>•</span>
                     <span>WEEKLY DROPS</span>
                     <span>•</span>
                     <span>SMALL-BATCH QUALITY</span>
                     <span>•</span>
-                    <span>VANCOUVER DELIVERY</span>
+                    <span>LOWER MAINLAND DELIVERY</span>
                     <span>•</span>
                     <span>WEEKLY DROPS</span>
                 </div>
                 <div class="marquee-content font-sans font-bold" aria-hidden="true">
                     <span>SMALL-BATCH QUALITY</span>
                     <span>•</span>
-                    <span>VANCOUVER DELIVERY</span>
+                    <span>LOWER MAINLAND DELIVERY</span>
                     <span>•</span>
                     <span>WEEKLY DROPS</span>
                     <span>•</span>
                     <span>SMALL-BATCH QUALITY</span>
                     <span>•</span>
-                    <span>VANCOUVER DELIVERY</span>
+                    <span>LOWER MAINLAND DELIVERY</span>
                     <span>•</span>
                     <span>WEEKLY DROPS</span>
                 </div>
@@ -119,7 +130,7 @@
                 </div>
             </div>
             <div class="split-col image-pad">
-                <img src="./assets/mission_plating.png" alt="Chef plating" class="br-24 w-full h-full object-cover">
+                <img src="./assets/family-dinner-home-cooked-pasta-vancouver.webp" alt="Vancouver family sharing a home-cooked pasta dinner around the kitchen table" class="br-24 w-full h-full object-cover" loading="lazy">
             </div>
         </section>
 
@@ -129,9 +140,8 @@
                 <!-- Col 1 -->
                 <article class="why-card anim-up">
 
-                    <h3 class="why-headline">Hyper-Local<br>Ingredients.</h3>
-                    <p class="why-desc">We bypass the supermarket supply chain. Produce is sourced directly from Fraser
-                        Valley farms, and seafood is day-boat caught from local docks.</p>
+                    <h3 class="why-headline">Best-Quality<br>Ingredients.</h3>
+                    <p class="why-desc">We purchase the best ingredients possible, working with multiple trusted vendors to source the highest-quality produce, meats, and pantry staples. No grocery markups, ever.</p>
                 </article>
                 <!-- Col 2 -->
                 <article class="why-card anim-up" style="transition-delay: 100ms">
@@ -143,9 +153,8 @@
                 <!-- Col 3 -->
                 <article class="why-card anim-up" style="transition-delay: 200ms">
 
-                    <h3 class="why-headline">Impeccable<br>Discretion.</h3>
-                    <p class="why-desc">We operate like ghosts in your kitchen. Professional, quiet, and spotless
-                        execution. Your sanctuary remains peaceful, only smelling of dinner.</p>
+                    <h3 class="why-headline">In Your Home<br>or Mine.</h3>
+                    <p class="why-desc">Whether you'd like meals cooked in your own kitchen or fully prepared and delivered from mine, the service flexes to fit your life — minimal disruption, maximum care.</p>
                 </article>
             </div>
         </section>
@@ -158,16 +167,16 @@
                 <div class="process-layout">
                     <div class="process-left">
                         <p class="process-eyebrow anim-up">How It Works</p>
-                        <h2 class="process-heading anim-up">Three steps to a calmer dinner week.</h2>
+                        <h2 class="process-heading anim-up">Three steps to a calmer meal week.</h2>
                         <p class="process-intro anim-up">
-                            A private-chef rhythm built for busy Vancouver homes. We handle planning, sourcing, cooking,
+                            A personal-cook rhythm built for busy Lower Mainland homes. We handle planning, sourcing, cooking,
                             and cleanup with zero guesswork.
                         </p>
-                        <p class="process-proof anim-up">Vancouver &bull; Weekly slots &bull; Cleanup included</p>
+                        <p class="process-proof anim-up">Lower Mainland &bull; Weekly slots &bull; Cleanup included</p>
 
                         <div class="process-cta-stack anim-up">
                             <a href="#contact" class="btn-primary process-cta-primary">Book a consult</a>
-                            <a href="#process" class="btn-secondary-dark process-cta-secondary">See sample menu</a>
+                            <a href="#about" class="btn-secondary-dark process-cta-secondary">Meet your cook</a>
                         </div>
                     </div>
 
@@ -177,7 +186,7 @@
                                 <p class="step-index" aria-hidden="true">01</p>
                                 <div class="step-copy">
                                     <h3 class="step-title">Consult &amp; Curate</h3>
-                                    <p class="step-desc">10-minute consult, then we design your weekly menu.</p>
+                                    <p class="step-desc">We discuss your needs, preferences, and dietary goals, then design your menu.</p>
                                 </div>
                             </li>
 
@@ -185,7 +194,7 @@
                                 <p class="step-index" aria-hidden="true">02</p>
                                 <div class="step-copy">
                                     <h3 class="step-title">Source &amp; Cook</h3>
-                                    <p class="step-desc">We shop local and cook from scratch in your home.</p>
+                                    <p class="step-desc">We shop local and cook from scratch — in your home or mine.</p>
                                 </div>
                             </li>
 
@@ -193,7 +202,7 @@
                                 <p class="step-index" aria-hidden="true">03</p>
                                 <div class="step-copy">
                                     <h3 class="step-title">Savor &amp; Enjoy</h3>
-                                    <p class="step-desc">Fridge stocked, kitchen spotless, dinners handled.</p>
+                                    <p class="step-desc">Fridge stocked, kitchen spotless, meals and snacks handled.</p>
                                 </div>
                             </li>
                         </ol>
@@ -216,18 +225,41 @@
             </div>
         </section>
 
-        <!-- Meet the Chef -->
+        <!-- Editorial Image Gallery -->
+        <section id="gallery" class="gallery-section section-pad overflow-hidden">
+            <div class="container text-center mb-16">
+                <p class="text-pink font-sans font-bold tracking-widest uppercase mb-4 anim-up">The Craft</p>
+                <h2 class="section-title anim-up" style="font-size: clamp(3rem, 5vw, 4.5rem);">Scratch made.</h2>
+            </div>
+
+            <div class="gallery-grid container">
+                <div class="gallery-item anim-up">
+                    <img src="./assets/fresh-herbs-tomato-salad-focaccia-prep.webp" alt="Fresh ingredients"
+                        loading="lazy" class="gallery-img">
+                </div>
+                <div class="gallery-item anim-up" style="transition-delay: 100ms">
+                    <img src="./assets/rigatoni-pesto-cream-sauce-fresh-basil.webp" alt="Rigatoni pesto" loading="lazy"
+                        class="gallery-img">
+                </div>
+                <div class="gallery-item anim-up" style="transition-delay: 200ms">
+                    <img src="./assets/homemade-golden-pancakes-stack.webp" alt="Golden pancakes" loading="lazy"
+                        class="gallery-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet Your Cook -->
         <section id="about" class="section-split bg-beige text-espresso">
             <div class="split-col image-pad">
-                <img src="./assets/chef_v7_1764713213025.png" alt="Chef portrait"
+                <img src="./assets/chef_v7_1764713213025.webp" alt="Personal cook portrait"
                     class="br-24 w-full h-full object-cover">
             </div>
             <div class="split-col content-pad">
-                <h2 class="section-title anim-up">Meet<br>the Chef.</h2>
+                <h2 class="section-title anim-up">Meet<br>your cook.</h2>
                 <p class="text-lg mt-6 anim-up opacity-90 max-w-md">
-                    With over a decade of experience in fine dining, I've traded the hectic restaurant line for the
-                    intimacy of private kitchens. My goal is bringing the elegance and craft of a Michelin experience to
-                    the comforting reality of your family's dinner table.
+                    I cook the way I'd want someone to cook for my own family — with care, real ingredients, and a personal
+                    touch. After years working in professional kitchens, I've found my home in private ones, helping busy
+                    Lower Mainland families eat better without the stress.
                 </p>
             </div>
         </section>
@@ -264,9 +296,9 @@
                         </button>
                         <div id="faq-answer-1" role="region" aria-labelledby="faq-question-1" aria-hidden="true"
                             class="faq-answer overflow-hidden transition-all duration-300" style="max-height: 0;">
-                            <p class="font-sans pb-6 opacity-80 text-lg leading-relaxed">Yes. We source all ingredients
-                                from our network of local purveyors, premium butchers, and organic markets. Groceries
-                                are billed separately with no markup.</p>
+                            <p class="font-sans pb-6 opacity-80 text-lg leading-relaxed">Yes, we purchase the best
+                                ingredients possible. We may use multiple vendors to ensure the best quality items.
+                                No grocery bill markups.</p>
                         </div>
                     </div>
                     <!-- FAQ 2 -->
@@ -313,22 +345,37 @@
                     menu.</h2>
 
                 <div class="form-wrapper anim-up" style="transition-delay: 100ms">
-                    <form id="bookingForm" class="contact-form-v7">
+                    <form id="bookingForm" class="contact-form-v7" novalidate>
+                        <!-- Web3Forms: paste Maggie's access key below to activate (free key from web3forms.com) -->
+                        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+                        <input type="hidden" name="subject" value="New HunnyBuns inquiry">
+                        <input type="hidden" name="from_name" value="HunnyBuns Website">
+                        <!-- Honeypot anti-spam (hidden from users) -->
+                        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
                         <div class="input-group-v7">
-                            <input type="text" id="fullName" class="input-v7" placeholder=" " required>
+                            <input type="text" id="fullName" name="name" class="input-v7" placeholder=" " required>
                             <label for="fullName" class="label-v7">Your Name</label>
                         </div>
                         <div class="input-group-v7" style="margin-top: 2rem">
-                            <input type="email" id="email" class="input-v7" placeholder=" " required>
+                            <input type="email" id="email" name="email" class="input-v7" placeholder=" " required>
                             <label for="email" class="label-v7">Email Address</label>
                         </div>
                         <div class="input-group-v7" style="margin-top: 2rem">
-                            <select id="interest" class="input-v7" required>
+                            <select id="interest" name="interest" class="input-v7" required>
                                 <option value="" disabled selected></option>
-                                <option value="Weekly Dinners">Weekly Family Dinners</option>
-                                <option value="Private Event">Private Event</option>
+                                <option value="In-home personal cooking">In-home personal cooking</option>
+                                <option value="Meals prepared in chef's kitchen">Meals prepared & delivered from our kitchen</option>
+                                <option value="Custom meal planning">Custom meal planning</option>
+                                <option value="Pre-order meals, sauces & snacks">Pre-order meals, sauces &amp; snacks</option>
+                                <option value="Private event">Private event</option>
+                                <option value="Not sure yet">Not sure yet — let's chat</option>
                             </select>
                             <label for="interest" class="label-v7">I'm interested in...</label>
+                        </div>
+                        <div class="input-group-v7" style="margin-top: 2rem">
+                            <textarea id="message" name="message" class="input-v7" placeholder=" " rows="3"></textarea>
+                            <label for="message" class="label-v7">Tell us a bit about your needs (optional)</label>
                         </div>
                         <div class="mt-8 pt-8">
                             <button type="submit" class="btn-submit-v7 w-full text-center">
@@ -347,13 +394,13 @@
     <footer class="footer-v7 bg-espresso text-beige overflow-hidden relative">
         <div class="footer-top flex justify-between px-8 py-12 border-b border-light">
             <div class="footer-brand">
-                <p class="text-pink font-sans font-bold tracking-widest uppercase text-sm mb-2">Vancouver, BC</p>
-                <p class="opacity-70 text-sm max-w-sm">Private chef services bridging the gap between grown-up
+                <p class="text-pink font-sans font-bold tracking-widest uppercase text-sm mb-2">Lower Mainland, BC</p>
+                <p class="opacity-70 text-sm max-w-sm">Personal cook services bridging the gap between grown-up
                     sophistication and approachable kid-friendly meals.</p>
             </div>
             <div class="footer-links flex gap-8 text-sm font-bold uppercase tracking-widest">
-                <a href="#mission" class="hover-text-pink transition">Mission</a>
-                <a href="#process" class="hover-text-pink transition">Menu</a>
+                <a href="#process" class="hover-text-pink transition">How It Works</a>
+                <a href="#about" class="hover-text-pink transition">Meet Your Cook</a>
                 <a href="#contact" class="hover-text-pink transition">Contact</a>
             </div>
         </div>

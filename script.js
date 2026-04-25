@@ -84,7 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const toast = document.getElementById('toast');
 
     if (form && toast) {
-        form.addEventListener('submit', e => {
+        const toastText = toast.querySelector('.toast-tx');
+        const defaultToast = toastText ? toastText.textContent : '';
+
+        form.addEventListener('submit', async e => {
             e.preventDefault();
 
             const submitBtn = form.querySelector('button[type="submit"]');
@@ -94,16 +97,39 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.style.opacity = '0.7';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
+            const showToast = (message, ms = 3500) => {
+                if (toastText && message) toastText.textContent = message;
                 toast.classList.add('is-visible');
+                setTimeout(() => {
+                    toast.classList.remove('is-visible');
+                    if (toastText && defaultToast) toastText.textContent = defaultToast;
+                }, ms);
+            };
 
-                form.reset();
+            try {
+                const formData = new FormData(form);
+                const payload = Object.fromEntries(formData.entries());
+
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    form.reset();
+                    showToast(defaultToast);
+                } else {
+                    showToast("Couldn't send right now — please email us instead.", 5000);
+                }
+            } catch (err) {
+                showToast("Couldn't send right now — please email us instead.", 5000);
+            } finally {
                 submitBtn.innerHTML = originalText;
                 submitBtn.style.opacity = '1';
                 submitBtn.disabled = false;
-
-                setTimeout(() => { toast.classList.remove('is-visible'); }, 3500);
-            }, 700);
+            }
         });
     }
     /* ================================================================
