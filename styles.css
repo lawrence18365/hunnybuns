@@ -1829,3 +1829,363 @@ h3,
     visibility: visible;
     transform: translate(-50%, 0);
 }
+
+/* ================================================================
+   SERVICES (4 services grid)
+   ================================================================ */
+.services-section {
+    padding: 6rem 1.5rem;
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+@media (min-width: 900px) {
+    .services-section {
+        padding: 8rem 2rem;
+    }
+}
+
+.services-shell {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-header {
+    max-width: 760px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+.services-eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 1.25rem;
+}
+
+.services-heading {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.services-intro {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.78;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+@media (min-width: 720px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    border-radius: var(--r-24);
+    padding: 2.25rem 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+@media (min-width: 720px) {
+    .service-card {
+        padding: 2.75rem 2.5rem 3rem;
+    }
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(26, 26, 26, 0.08);
+}
+
+.service-num {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    color: var(--pink);
+    margin-bottom: 1.25rem;
+}
+
+.service-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.65rem, 2.4vw, 2rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 1rem;
+}
+
+.service-sub {
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.service-desc {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.55;
+    opacity: 0.78;
+    margin-bottom: 1.5rem;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.service-list li {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+    position: relative;
+    padding-left: 1.4rem;
+    opacity: 0.85;
+}
+
+.service-list li:last-child {
+    border-bottom: none;
+}
+
+.service-list li::before {
+    content: '•';
+    color: var(--pink);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+/* ================================================================
+   AUDIENCE (Who I work with)
+   ================================================================ */
+.audience-section {
+    padding: 5rem 1.5rem;
+}
+
+@media (min-width: 900px) {
+    .audience-section {
+        padding: 7rem 2rem;
+    }
+}
+
+.audience-shell {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.audience-eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--espresso);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.audience-heading {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.75rem;
+}
+
+.audience-pills {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.audience-pill {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    padding: 0.85rem 1.4rem;
+    border: 1.5px solid var(--espresso);
+    border-radius: var(--r-full);
+    background: transparent;
+    color: var(--espresso);
+}
+
+/* ================================================================
+   EXTRAS (Add-ons + Pricing)
+   ================================================================ */
+.extras-section {
+    padding: 6rem 1.5rem;
+    border-top: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+@media (min-width: 900px) {
+    .extras-section {
+        padding: 8rem 2rem;
+    }
+}
+
+.extras-shell {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+@media (min-width: 900px) {
+    .extras-shell {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 5rem;
+    }
+}
+
+.extras-eyebrow,
+.pricing-eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 1rem;
+}
+
+.extras-heading {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.4rem, 4.6vw, 3.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+}
+
+.addons-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.addon-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.1rem 0;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.addon-item:last-child {
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.addon-tick {
+    font-family: var(--font-display);
+    color: var(--pink);
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 1;
+    flex: 0 0 auto;
+}
+
+.addon-text strong {
+    font-weight: 700;
+}
+
+.extras-pricing {
+    background: var(--espresso);
+    color: var(--beige);
+    padding: 2.75rem 2.25rem;
+    border-radius: var(--r-24);
+}
+
+@media (min-width: 720px) {
+    .extras-pricing {
+        padding: 3rem 2.75rem;
+    }
+}
+
+.extras-pricing .pricing-eyebrow {
+    color: var(--pink);
+}
+
+.pricing-headline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 1.25rem;
+}
+
+.pricing-headline em {
+    color: var(--pink);
+    font-style: italic;
+}
+
+.pricing-body {
+    font-family: var(--font-sans);
+    font-size: 1.02rem;
+    line-height: 1.6;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+}
+
+.pricing-cta {
+    display: inline-block;
+    background: var(--pink);
+    color: var(--espresso);
+    margin-bottom: 1.75rem;
+}
+
+.pricing-soon {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    opacity: 0.65;
+    border-top: 1px solid rgba(245, 242, 235, 0.15);
+    padding-top: 1.25rem;
+}
+
+/* Testimonial coming-soon line */
+.testimonial-soon {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-top: 1.5rem;
+}

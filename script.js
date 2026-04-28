@@ -109,15 +109,19 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const formData = new FormData(form);
                 const payload = Object.fromEntries(formData.entries());
+                const contactEmail = (form.dataset.contactEmail || '').trim();
 
-                const res = await fetch('https://api.web3forms.com/submit', {
+                if (!contactEmail) throw new Error('Missing data-contact-email on form');
+
+                const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(contactEmail)}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                     body: JSON.stringify(payload)
                 });
                 const data = await res.json();
+                const ok = data.success === true || data.success === 'true';
 
-                if (data.success) {
+                if (ok) {
                     form.reset();
                     showToast(defaultToast);
                 } else {
