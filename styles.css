@@ -1,13 +1,14 @@
 /* ================================================================
    HUNNYBUNS — V5 "Cafe on Eleventh" Aesthetic
    Fonts: Fraunces (Thick Serif), Outfit (Sans UI)
-   Colors: Neon Pink, Espresso, Beige
+   Colors: Client-logo Peach, Espresso, Beige
    ================================================================ */
 
 :root {
-    /* Bold Branding Colors */
-    --pink: #ffb1cb;
-    /* Matching the reference image 'Wholesome goodness' color */
+    /* Peach sampled from Maggie's original October 2026 logo. */
+    --brand-peach: #ffd3c9;
+    --brand-accent: #864b3f;
+    --pink: var(--brand-peach);
     --espresso: #1a1a1a;
     /* Extremely dark but warm grey/black */
     --beige: #f5f2eb;
@@ -253,7 +254,7 @@ h3,
 
 .logo-header {
     font-family: var(--font-sans);
-    font-weight: 900;
+    font-weight: 500;
     font-size: 0.95rem;
     letter-spacing: 0.14em;
     color: var(--beige);
@@ -297,7 +298,7 @@ h3,
 }
 
 .header-cta:hover {
-    background: #ffc7db;
+    background: #ffe2da;
 }
 
 .menu-btn {
@@ -694,6 +695,66 @@ h3,
     justify-content: center;
 }
 
+/* Maggie's bio and original logo share a calm, balanced split layout. */
+.about-section {
+    min-height: auto;
+    align-items: center;
+}
+
+.about-logo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    background: var(--brand-peach);
+}
+
+.about-copy {
+    padding-top: clamp(40px, 6vw, 80px);
+    padding-bottom: clamp(40px, 6vw, 80px);
+}
+
+.about-eyebrow {
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.about-copy .section-title {
+    font-size: clamp(3rem, 5vw, 5rem);
+}
+
+.about-bio {
+    max-width: 48ch;
+    margin-top: 1.75rem;
+    font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+    line-height: 1.7;
+}
+
+.about-bio p + p {
+    margin-top: 1.25rem;
+}
+
+@media (max-width: 899px) {
+    .about-brand {
+        padding-bottom: 0;
+    }
+
+    .about-logo {
+        max-width: 520px;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    #mission .section-title {
+        font-size: clamp(2.5rem, 12vw, 3rem);
+    }
+}
+
 .section-pad {
     padding: clamp(60px, 10vw, 140px) clamp(24px, 5vw, 80px);
 }
@@ -718,7 +779,7 @@ h3,
     width: min(560px, 64vw);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 177, 203, 0.24) 0%, rgba(255, 177, 203, 0) 70%);
+    background: radial-gradient(circle, rgba(255, 211, 201, 0.24) 0%, rgba(255, 211, 201, 0) 70%);
     top: -220px;
     right: -140px;
     pointer-events: none;
@@ -1062,7 +1123,7 @@ h3,
 
 .btn-submit-v7:hover {
     transform: translateY(-2px);
-    background: #ffc7db;
+    background: #ffe2da;
     box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -1333,11 +1394,11 @@ h3,
 }
 
 .footer-massive-text {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 18vw;
-    line-height: 0.75;
-    letter-spacing: -0.04em;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: clamp(2.5rem, 12vw, 14rem);
+    line-height: 1.1;
+    letter-spacing: 0.04em;
     color: var(--beige);
     text-align: center;
     margin: 0;
@@ -2178,6 +2239,23 @@ h3,
     opacity: 0.65;
     border-top: 1px solid rgba(245, 242, 235, 0.15);
     padding-top: 1.25rem;
+}
+
+/* Keep small accent labels legible on cream; peach remains the light accent on dark. */
+#gallery .text-pink,
+#faq .text-pink,
+.why-number,
+.course-label,
+.services-eyebrow,
+.service-num,
+.service-list li::before,
+.extras-eyebrow,
+.addon-tick {
+    color: var(--brand-accent);
+}
+
+#faq .faq-question:focus-visible {
+    outline-color: var(--brand-accent);
 }
 
 /* Testimonial coming-soon line */
